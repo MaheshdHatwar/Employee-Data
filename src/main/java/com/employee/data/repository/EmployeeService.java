@@ -1,19 +1,12 @@
 package com.employee.data.repository;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
-import javax.annotation.PostConstruct;
-
-import org.apache.catalina.authenticator.SavedRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import com.employee.data.entity.Employee;
 import com.employee.data.exception.EmployeeAlreadyExistsException;
 
@@ -32,6 +25,7 @@ public class EmployeeService {
 	//Sort the data in descending order
 	
 	public List<Employee> findEmployeesWithSort(String field){
+		
 		return employeeRepository.findAll(Sort.by(Sort.Direction.DESC, field));
 	}
 	
@@ -42,7 +36,7 @@ public class EmployeeService {
 		return employeeRepository.findAll();
 	}
 	
-//	save post data into the db
+
 	
 	
 //	Get Employee data by providing id
@@ -50,16 +44,19 @@ public class EmployeeService {
 		return employeeRepository.findById(employeeId).get();
 	}
 
+	public Employee getEmployeeData(Integer employeeSalary) {
+		return employeeRepository.findById(employeeSalary).get();
+	}
     
 	//deleting employee data
 	public void deleteEmployee(Integer employeeId) {
 		employeeRepository.deleteById(employeeId);
 	}	
 	
-	//Exception handling
-//	public void saveEmployee(Employee employee) {
-//		employeeRepository.save(employee);
-//	}
+
+	public void updateEmployee(Employee employee) {
+		employeeRepository.save(employee);
+	}
 
 	public String saveEmployee(Employee employee)
     {

@@ -75,12 +75,26 @@ public class EmployeeController {
         try {
         	Employee existEmployee = employeeService.getEmployee(employeeId);
         	employee.setEmployeeId(employeeId);            
-        	employeeService.saveEmployee(employee);
+        	employeeService.updateEmployee(employee);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    
+    
+//    @PutMapping("/{employeeSalary}")
+//    public ResponseEntity<?> update(@RequestBody Employee employee,@PathVariable Integer employeeSalary) {
+//        try {
+//        	Employee existEmployee = employeeService.getEmployeeData(employeeSalary);
+//        	employee.setEmployeeSalary(employeeSalary);            
+//        	employeeService.updateEmployee(employee);
+//            return new ResponseEntity<>(HttpStatus.OK);
+//        } catch (NoSuchElementException e) {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//    }
+    
     @DeleteMapping("/{employeeId}")
     public void delete(@PathVariable Integer employeeId) {
 
