@@ -19,7 +19,7 @@ public class EmployeeService {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	
-	@PostConstruct
+//	@PostConstruct
 	public void initLoadDataToDB() {
 		List<Employee> employees= (List<Employee>) IntStream.rangeClosed(1, 40).mapToObj(i->new Employee(new Random().nextInt(100),"Employee"+i,new Random().nextInt(200000),"Engineer"+i)).collect(Collectors.toList());
 		employeeRepository.saveAll(employees);
