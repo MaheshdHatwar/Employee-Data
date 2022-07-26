@@ -36,6 +36,9 @@ public class EmployeeController {
 		return employeeService.listAllEmployees();
 	}
 
+//    public User getUser(@PathVariable String id) {
+//        return userService.getUser(id);
+//    }
     @GetMapping("/{employeeId}")
     public ResponseEntity<Employee> get(@PathVariable Integer employeeId) {
         try {
@@ -67,11 +70,11 @@ public class EmployeeController {
     public void add(@RequestBody Employee employee) {
         employeeService.saveEmployee(employee);
     }
-    @PutMapping("/{employeeSalary}")
-    public ResponseEntity<?> update(@RequestBody Employee employee, @PathVariable Integer employeeSalary) {
+    @PutMapping("/{employeeId}")
+    public ResponseEntity<?> update(@RequestBody Employee employee,@PathVariable Integer employeeId) {
         try {
-        	Employee existEmployee = employeeService.getEmployee(employeeSalary);
-        	employee.setEmployeeSalary(employeeSalary);            
+        	Employee existEmployee = employeeService.getEmployee(employeeId);
+        	employee.setEmployeeId(employeeId);            
         	employeeService.saveEmployee(employee);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (NoSuchElementException e) {

@@ -25,7 +25,7 @@ public class EmployeeService {
 	
 //	@PostConstruct
 	public void initLoadDataToDB() {
-		List<Employee> employees= (List<Employee>) IntStream.rangeClosed(1, 40).mapToObj(i->new Employee("Engineer"+i,"Employee"+i,new Random().nextInt(200000))).collect(Collectors.toList());
+		List<Employee> employees= (List<Employee>) IntStream.rangeClosed(1, 40).mapToObj(i->new Employee(new Random().nextInt(100),"Employee"+i,new Random().nextInt(200000),"Engineer"+i)).collect(Collectors.toList());
 		employeeRepository.saveAll(employees);
 	}
 	
@@ -44,10 +44,7 @@ public class EmployeeService {
 	
 //	save post data into the db
 	
-	public void saveEmployee(Employee employee) {
-		employeeRepository.save(employee);
-	}
-
+	
 //	Get Employee data by providing id
 	public Employee getEmployee(Integer employeeId) {
 		return employeeRepository.findById(employeeId).get();
@@ -60,7 +57,11 @@ public class EmployeeService {
 	}	
 	
 	//Exception handling
-	public String addEmployee(Employee employee)
+//	public void saveEmployee(Employee employee) {
+//		employeeRepository.save(employee);
+//	}
+
+	public String saveEmployee(Employee employee)
     {
         Employee existingEmployee
             = employeeRepository.findById(employee.getEmployeeId())

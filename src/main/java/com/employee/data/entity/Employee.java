@@ -21,15 +21,15 @@ public class Employee {
 		this.employeeSalary = employeeSalary;
 		this.employeeDesignation = employeeDesignation;
 	}
-public Employee(String employeeDesignation, String employeeName, int employeeSalary) {
-		
-		this.employeeId = employeeId;
-		this.employeeName = employeeName;
-		this.employeeSalary = employeeSalary;
-		this.employeeDesignation = employeeDesignation;
-	}
+//public Employee(String employeeDesignation, String employeeName, int employeeSalary) {
+//		
+////		this.employeeId = employeeId;
+//		this.employeeName = employeeName;
+//		this.employeeSalary = employeeSalary;
+//		this.employeeDesignation = employeeDesignation;
+//	}
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int getEmployeeId() {
 		return employeeId;
 	}
