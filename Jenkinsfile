@@ -26,7 +26,6 @@ pipeline{
                 withCredentials([usernameColonPassword(credentialsId: 'b0261b65-d927-40dc-89d0-cb31b076183a', variable: 'dockerhub')]) {
                 bat 'docker login -u m1088994mahesh -p Nidhitai@123'
                 bat 'docker push m1088994mahesh/employee-management-system'
-    
 }
             }
         }
