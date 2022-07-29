@@ -18,6 +18,7 @@
 		 
 	</properties>
 	<dependencies>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -51,6 +52,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		
 	</dependencies>
 
 	<build>
@@ -71,7 +74,7 @@
                 <source>1.8</source>
                 <target>1.8</target>
 			</configuration>
-</plugin>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
