@@ -70,8 +70,8 @@ public class EmployeeController {
     public void add(@RequestBody Employee employee) {
         employeeService.saveEmployee(employee);
     }
-    @PutMapping("/{employeeId}")
-    public ResponseEntity<?> update(@RequestBody Employee employee,@PathVariable Integer employeeId) {
+    @PutMapping("/{employeeId}/{employeeSalary}")
+    public ResponseEntity<?> update(@RequestBody Employee employee,@PathVariable Integer employeeId, @PathVariable Integer employeeSalary) {
         try {
         	Employee existEmployee = employeeService.getEmployee(employeeId);
         	employee.setEmployeeId(employeeId);            
