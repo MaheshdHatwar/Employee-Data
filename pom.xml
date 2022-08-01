@@ -24,7 +24,13 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>	
 		
+<<<<<<< HEAD
 				
+=======
+		
+		
+		
+>>>>>>> 8b361d7cb2f0a5942c6e97fcccffb48b8a52bb88
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
